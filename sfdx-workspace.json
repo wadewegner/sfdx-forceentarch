@@ -5,7 +5,7 @@
       "Default": true
     }
   ],
-  "Namespace": "",
+  "Namespace": "eawaw",
   "SfdcLoginUrl": "https://login.salesforce.com",
   "SourceApiVersion": "39.0",
   "UseDecomposition": true
