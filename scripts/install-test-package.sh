@@ -8,7 +8,11 @@ username="$(echo ${created} | jq -r .username)"
 packageVersion="$(sfdx force:package1:version:list -u EntArchPackaging --json)"
 packageVersionId="$(echo ${packageVersion} | jq -c '.results' | jq -c '.[]' | jq -r .MetadataPackageVersionId)"
 
-echo ${username}
-echo ${packageVersionId}
+# remove last three characters
+packageVersionId=${packageVersionId%???}
 
+# echo ${username}
+# echo ${packageVersionId}
+
+# install package into newly created scratch org
 sfdx force:packageversion:install -i ${packageVersionId} -u ${username}
